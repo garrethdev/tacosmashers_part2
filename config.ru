@@ -3,5 +3,5 @@ require 'bundler'
 
 Bundler.require
 
-require './app/app.rb'
+require './app.rb'
 run SinatraApp

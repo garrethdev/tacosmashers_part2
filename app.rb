@@ -1,7 +1,7 @@
 class SinatraApp < Sinatra::Base
   require 'sinatra'
   require 'active_record'
-  require_relative './models/elephant'
+  require_relative './app/models/elephant'
 
   ActiveRecord::Base.establish_connection(adapter: 'postgresql')
 

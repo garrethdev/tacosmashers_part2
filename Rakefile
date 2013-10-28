@@ -1,6 +1,6 @@
 require 'sinatra/activerecord/rake'
 require 'sinatra'
-require './app/app'
+require './app'
 
 namespace :db do
   desc "create the postgres database"
