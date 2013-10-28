@@ -3,7 +3,7 @@ require 'sinatra'
 require './app/app'
 
 namespace :db do
-  desc "create a postgres database"
+  desc "create the postgres database"
   task :create do
     `createdb elephant_db`
   end
