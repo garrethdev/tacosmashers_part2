@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028185947) do
+ActiveRecord::Schema.define(version: 20131030002828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "elephants", force: true do |t|
-    t.string "name"
+  create_table "members", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "post_text"
+    t.integer  "members_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

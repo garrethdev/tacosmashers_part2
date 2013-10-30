@@ -4,11 +4,11 @@ require './app'
 namespace :db do
   desc "create the postgres database"
   task :create do
-    `createdb sinatra_skeleton_dev`
+    `createdb time_fuck`
   end
 
   desc "drop the postgres database"
   task :drop do
-    `dropdb sinatra_skeleton_dev`
+    `dropdb time_fuck`
   end
 end
