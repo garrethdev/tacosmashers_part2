@@ -25,7 +25,15 @@ get '/member/feed' do
 end
 
 post '/search' do
-  p Member.find_by first_name: params[:search_entry]
+  p '-'*100
+  y = []
+  p Member.find_each { |member|
+      if member.first_name == params[:search_entry]
+        y << member
+      end
+    }
+    p y
+  p'-'*100
   redirect '/member'
 end
 
