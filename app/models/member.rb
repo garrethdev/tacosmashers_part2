@@ -1,31 +1,20 @@
 require 'bcrypt'
 
 class Member < ActiveRecord::Base
-has_many :posts
- include BCrypt
-
+  has_many :posts
+  include BCrypt
     def password
-      @password ||= Password.new(password)
+      @password ||= Password.new(password_hash)
     end
+            #Sherif changed the name of password_hash, maybe more
 
     def password=(new_password)
       @password = Password.create(new_password)
-      self.password = @password
+      self.password_hash = @password
     end
 end
 
-# signup
-# unm = 'Mike'
-# pwd  = 'Sage'
-# # ---
-# mike = Member.new
-# mike.name = unm
-# mike.password = pwd
-# mike.save
 
-# # login
-# unm = 'Mike'
-# pwd = 'Sage'
 # # ---
 # member = Member.where(:name => unm).first
 # if member.password == pwd
