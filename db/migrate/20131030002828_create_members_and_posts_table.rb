@@ -6,7 +6,7 @@ class CreateMembersAndPostsTable < ActiveRecord::Migration
       t.timestamps
     end
      create_table :posts do |t|
-      t.string :post_text
+      t.string :text
       t.belongs_to :members
       t.timestamps
     end

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131101001937) do
   end
 
   create_table "posts", force: true do |t|
-    t.string   "post_text"
+    t.string   "text"
     t.integer  "members_id"
     t.datetime "created_at"
     t.datetime "updated_at"

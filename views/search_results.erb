@@ -1,0 +1,12 @@
+<form method="post" action='/search'>
+  Search: <input type='text' name='search_entry'>
+  <input type="submit" value='Search'>
+</form>
+
+  <h1>Search Results:</h1>
+
+  <% @search_results.each_with_index do |member, index| %>
+    <p><%= index+1 %>. <%= member.first_name %> <%= member.last_name %></p>
+  <% end %>
+
+
