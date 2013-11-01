@@ -1,0 +1,3 @@
+Migration Details:
+We have to update the models so that they have the proper associations.
+ - Those are: (members) has_many :members, through: :friendships & has_many :friendships

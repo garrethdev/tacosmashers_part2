@@ -1,22 +1,32 @@
 <h1>Welcome to Member Page</h1>
 
+
+<nav>
+  <a href="http://localhost:9393/search">Search Members</a>
+  <a href="">List Members</a>
+  <a href="">My Profile</a>
+</nav>
+
+<br>
+
 <form method="post" action='/posts'>
   Post: <textarea name='text' maxlength='140'></textarea>
   <input type='submit' value='Submit!'>
 </form>
-
-<br>
-<a href='/member/feed'>Feed</a>
-<br>
-<br>
 
 <form method="post" action='/search'>
   Search: <input type='text' name='search_entry'>
   <input type="submit" value='Search'>
 </form>
 
+
 <form method="post" action='/new_member'>
   First Name: <input type='text' name='first_name'><br>
   Last Name: <input type='text' name='last_name'>
   <input type="submit" value='Add'>
 </form>
+
+
+<% @posts.each do |post| %>
+<p> <%= post.text %> </p>
+<% end %>
