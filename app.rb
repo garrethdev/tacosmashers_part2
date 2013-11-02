@@ -44,8 +44,9 @@ get '/member' do
 end
 
 ###Member Feed
-get '/member/feed' do
-  @posts = Post.all
+get '/member/list' do
+  @members = Member.all
+  erb :member_list
 end
 
 ###Create Post

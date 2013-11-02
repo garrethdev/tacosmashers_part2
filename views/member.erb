@@ -2,22 +2,23 @@
 
 
 <nav>
-  <a href="http://localhost:9393/search">Search Members</a>
-  <a href="">List Members</a>
+  <a href="/member/list">List Members</a>
   <a href="">My Profile</a>
 </nav>
 
 <br>
+
+<form method="post" action='/search'>
+  Search by First Name:<br> <input type='text' name='search_entry'>
+  <input type="submit" value='Search'>
+</form>
 
 <form method="post" action='/posts'>
   Post: <textarea name='text' maxlength='140'></textarea>
   <input type='submit' value='Submit!'>
 </form>
 
-<form method="post" action='/search'>
-  Search: <input type='text' name='search_entry'>
-  <input type="submit" value='Search'>
-</form>
+
 
 
 <% @posts.each do |post| %>
