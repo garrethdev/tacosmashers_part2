@@ -4,7 +4,7 @@ helpers do
     @member = Member.find_by_username(params[:user])
     if @member != nil
       if @member.password_hash == params[:password]
-        redirect '/'
+        redirect '/member'
       else
         erb :sign_in
       end
@@ -18,7 +18,7 @@ helpers do
     m = Member.new
     p params
     m.username = params[:user]
-    m.password = params[:password]
+    m.password_hash = params[:password]
     m.email = params[:email]
     m.first_name = params[:firstname]
     m.last_name = params[:lastname]

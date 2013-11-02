@@ -21,6 +21,7 @@ end
 
 post '/sessions' do
   authenticate_user
+
 end
 
 get '/sessions' do
@@ -33,7 +34,7 @@ end
 
 post '/users' do
   add_users
-  erb :index
+  erb :sign_in
 end
 
 ###Member Home Page
@@ -51,7 +52,7 @@ end
 post '/posts' do
   p params
   Post.create(params)
-  redirect '/member/feed'
+  redirect '/member'
 end
 
 ###Search - Redirect with parameters
@@ -60,17 +61,4 @@ post '/search' do
   p @search_results
   p 'First @search'
   erb :search
-end
-
-# # ###Search Results
-# get '/member/search' do
-#   # p @search_results = Member.where(first_name: params[:search_entry])
-#   p 'Second @search'
-#   erb :search_results
-# end
-
-###New Member
-post '/new_member' do
-  Member.create(params)
-  redirect '/member/feed'
 end
