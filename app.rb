@@ -8,7 +8,7 @@ require 'pry'
 
 enable :sessions
 
-ActiveRecord::Base.establish_connection(adapter: 'postgresql', database: 'time_fuck')
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb' )
 
 ###Landing Page
 get '/' do
