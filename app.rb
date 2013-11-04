@@ -25,7 +25,6 @@ post '/sessions' do
 end
 
 get '/sessions' do
- #how do we save the user session
 end
 
 get '/users' do
@@ -59,7 +58,5 @@ end
 ###Search - Redirect with parameters
 post '/search' do
   @search_results = Member.where(first_name: params[:search_entry])
-  p @search_results
-  p 'First @search'
   erb :search
 end

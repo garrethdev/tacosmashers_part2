@@ -6,7 +6,6 @@ class Member < ActiveRecord::Base
     def password
       @password ||= Password.new(password_hash)
     end
-            #Sherif changed the name of password_hash, maybe more
 
     def password=(new_password)
       @password = Password.create(new_password)
